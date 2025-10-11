@@ -1,0 +1,128 @@
+/* Opšti stil */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/kvar\ 4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Dugme za nazad - novi izgled */
+.btn-nazad {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #4b4b4b, #2e2e2e);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+.btn-nazad::before {
+    content: '← ';
+    font-size: 22px;
+    margin-right: 8px;
+}
+.btn-nazad:hover {
+    background: linear-gradient(135deg, #4b4b4b, #2e2e2e);
+    transform: translateY(-1px) scale(1.05); /* suptilna animacija */
+    box-shadow: 0 11px 24px rgba(0,0,0,0.48);
+}
+
+/* Kontejner za formu */
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    overflow: visible;
+    position: relative;
+}
+
+/* Naslov */
+h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Forma */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stilizacija input polja */
+input, textarea {
+    width: 100%;  
+    padding: 12px;
+    margin: 10px 0;  
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: gray; 
+    color: white;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+/* Placeholder tekst */
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+
+/* Efekat fokusiranja */
+input:focus, textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+}
+
+/* Dugme za prijavu */
+button {
+    width: 100%; 
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+/* Hover efekat */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 75, 43, 0.8);
+}

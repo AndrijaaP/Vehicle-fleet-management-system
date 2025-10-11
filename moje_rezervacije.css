@@ -1,0 +1,197 @@
+/* Globalne postavke */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('img/car1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Blur efekat pozadine */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: -1;
+}
+
+/* Glavni kontejner */
+.container {
+    width: 95%;
+    max-width: 900px; 
+    text-align: center;
+    padding: 20px;
+    position: relative; /* za apsolutno pozicioniranje dugmeta */
+}
+
+/* Dugme za nazad - novi izgled */
+.btn-nazad {
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4b4b4b, #2e2e2e);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+.btn-nazad::before {
+    content: '← ';
+    font-size: 22px;
+    margin-right: 8px;
+}
+.btn-nazad:hover {
+    background: linear-gradient(135deg, #4b4b4b, #2e2e2e);
+    transform: translateY(-1px) scale(1.05); /* suptilna animacija */
+    box-shadow: 0 11px 24px rgba(0,0,0,0.48);
+}
+
+/* Kontejner za tabelu */
+.table-container {
+    background: rgba(255, 255, 255, 0.98); 
+    border-radius: 15px; 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
+    overflow: visible;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Naslov "Moje Rezervacije" */
+.table-title th {
+    font-size: 32px; 
+    font-weight: 700; 
+    color: white;
+    background: linear-gradient(135deg, #2812ee, #1a0bb3); 
+    padding: 25px; 
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+    margin-bottom: 0;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Podnaslov "Pregled rezervisanih vozila" */
+.table-subtitle th {
+    font-size: 24px; 
+    font-weight: 600; 
+    color: white;
+    background: linear-gradient(135deg, #007bff, #005bb5); 
+    padding: 20px; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px; 
+    margin-bottom: 0;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.98); 
+    border-radius: 0 0 15px 15px; 
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+th, td {
+    padding: 14px; 
+    border-bottom: 1px solid #e0e0e0; 
+    text-align: center;
+    font-size: 16px; 
+    color: #333; 
+}
+
+/* Zaglavlje tabele */
+th {
+    background: #007bff; 
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600; 
+    padding: 14px;
+}
+
+/* Efekti na redove */
+tbody tr {
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+    background: rgba(0, 123, 255, 0.1); 
+    transform: scale(1.02); 
+}
+
+/* Dugme "Otkaži" */
+button.cancel {
+    background-color: #ff4444; 
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer;
+    font-size: 16px; 
+    border-radius: 8px; 
+    transition: all 0.3s ease-in-out;
+    font-weight: 600; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+button.cancel:hover {
+    background-color: #cc0000; 
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+    .table-title th {
+        font-size: 28px;
+        padding: 20px;
+    }
+
+    .table-subtitle th {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 12px; 
+        font-size: 14px; 
+    }
+
+    button.cancel {
+        width: 100%; 
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px; 
+    }
+
+    .table-container {
+        padding: 10px; 
+    }
+
+    .btn-nazad {
+        padding: 16px 32px;
+        font-size: 20px;
+    }
+}

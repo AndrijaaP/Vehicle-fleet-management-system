@@ -1,0 +1,127 @@
+/* Opšti stil */
+body {
+    font-family: Arial, sans-serif;
+    background: url('images/kvar5.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Dugme za nazad - novi izgled */
+.btn-nazad {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #2980b9, #22303c);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+.btn-nazad::before {
+    content: '← ';
+    font-size: 22px;
+    margin-right: 8px;
+}
+.btn-nazad:hover {
+    background: linear-gradient(135deg, #2980b9, #22303c);
+    transform: translateY(-1px) scale(1.05); /* suptilna animacija */
+    box-shadow: 0 11px 24px rgba(0,0,0,0.48);
+}
+
+/* Kontejner za tabelu */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    background: white;
+    padding: 0; 
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: visible; 
+    position: relative;
+}
+
+/* Stilizacija tabele */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Naslov unutar tabele */
+.table-title {
+    background: #343a40;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px;
+}
+
+/* Zaglavlja tabele */
+th {
+    background: #495057;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Redovi tabele */
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Alternativna boja redova */
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Uklanjamo dodatne linije */
+th, td {
+    border: none;
+}
+
+/* Stilizacija select opcija */
+select {
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* Dugme */
+button {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #218838, #1e7e34);
+}
