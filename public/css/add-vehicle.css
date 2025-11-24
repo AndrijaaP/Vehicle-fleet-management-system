@@ -1,0 +1,128 @@
+/* Resetovanje osnovnih stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Pozadina stranice */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../../public/images/blue-sedan.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Dugme za nazad - novi izgled */
+.btn-nazad {
+    position: absolute;
+    top: -20px;
+    left: -1px;
+    padding: 5px 15px;
+    background: linear-gradient(135deg, #2980b9, #22303c);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+.btn-nazad::before {
+    content: '← ';
+    font-size: 22px;
+    margin-right: 8px;
+}
+.btn-nazad:hover {
+    background: linear-gradient(135deg, #2980b9, #22303c);
+    transform: translateY(-1px) scale(1.05); /* suptilna animacija */
+    box-shadow: 0 11px 24px rgba(0,0,0,0.48);
+}
+/* Stilizacija kontejnera forme */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: visible;
+    position: relative;
+}
+
+/* Naslov */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+}
+
+/* Stilizacija labela */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Stilizacija input polja i select-a */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Fokus efekat */
+input:focus, select:focus {
+    border-color: #4ca1af;
+    outline: none;
+}
+
+/* Dugme */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #4ca1af;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+/* Hover efekat na dugmetu */
+button:hover {
+    background: #2c3e50;
+    transform: scale(1.05);
+}
+
+/* Responzivnost */
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+    }
+}
