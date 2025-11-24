@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registruj se</title>
+	<!-- DEFINING THE CHAR SET-->
+	<meta charset="utf-8">
+
+	<!--WEB FONTS REFERENCES-->
+	<!-- Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i|Montserrat:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+
+	<!-- SETTING VIEWPORT-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS REFERENCE TO BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+
+	<!-- EXTERNAL STYLES REFERENCE-->
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css">
+	<link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../public/css/signUpForm.css">
+	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+	<script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+</head>
+
+<body class="g-bg-color--dark-light">
+	<!-- STICKY HEADER -->
+	<div class="header">
+		<div class="Navbar">
+			<div class="logo-img-new">
+			</div>
+			<div></div>
+			<div class="Navbar__Link Navbar__Link-toggle">
+				<i class="fas fa-bars fa-2x"></i>
+			</div>
+			<div class="Navbar__Items">
+				<div class="Navbar__Link">
+					<a class="a-header" href="../../index.html">POČETNA</a>
+				</div>
+				<div class="Navbar__Link">
+					<a class="a-header" href="../../src/admin/index-admin-login.html">ADMIN LOGIN</a>
+				</div>
+				<div class="Navbar__Link">
+					<a class="a-header" href="../../src/user/index-user.html">KORISNIK LOGIN</a>
+				</div>
+				<div class="Navbar__Link">
+					<a class="a-header" href="../../src/common/signUpForm.html">REGISTRUJ SE</a>
+				</div>
+				<div class="Navbar__Link">
+					<a class="a-header" href="../../src/common/contact-us.html">KONTAKTIRAJTE NAS</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END OF STICKY HEADER -->
+
+	<div class="g-position--relative main-container">
+		<div class="single-line">
+			<h2 class="g-color--white g-font-weight--400 heading" style="font-size: 2.8em;">REGISTRUJ SE</h1>
+		</div>
+		<form name="signup" action="../../src/handlers/register.php" onsubmit="return formValidate(event)" method="POST">
+			<!-- NAME OF PERSON -->
+			<div class="single-line">
+				<input type="text" name="person-name" id="username" placeholder="*Ime" title="Maximum 30 characters"
+					required>
+			</div>
+
+			<!-- LAST NAME-->
+			<div class="single-line">
+				<input type="text" name="prezime" id="lastname" placeholder="*Prezime" required>
+			</div>
+
+
+			<!-- EMAIL -->
+			<div class="single-line">
+				<input type="email" name="email" placeholder="*Email" required>
+			</div>
+
+
+			<!-- LISENCE -->
+			<div class="single-line">
+				<input type="text" name="dl" placeholder="*Broj Dozvole" id="dril" title="Exact 8 digit number"
+					required>
+			</div>
+
+			<!-- PASSWORD -->
+			<div class="single-line">
+				<input type="password" name="password" placeholder="*Lozinka" id="pass"
+					title="MUST CONSISTS OF A UPPERCASE A LOWERCASE AND A NUMBER AND MUST BE 8 CHARACTERS." required>
+			</div>
+
+			<!-- CONFIRM PASSWORD -->
+			<div class="single-line">
+				<input type="password" name="cnfrpassword" placeholder="*Potvrdi Lozinku" id="cnfrpass"
+					title="MUST MATCH ABOVE PASSWORD." required>
+			</div>
+
+			<!-- SUBMIT BUTTON -->
+			<div style="padding-top: 1rem">
+				<input type="submit" class="btn g-color--dark g-bg-color--white" value="SAČUVAJ">
+			</div>
+		</form>
+		<br>
+	</div>
+	<div>
+		<img style="padding-left: 20%; margin-top: 3rem;" src="../../public/images/pencil-01.png">
+	</div>
+
+	<!-- FOOTER-->
+	<footer class="g-bg-color--dark-light g-color--white-opacity">
+		<div class="foot">
+			<div class="padd__needed">
+			</div>
+			<div class="connectivity padd__needed">
+				<div class="connect">
+					<i class="fab fa-facebook-square"></i>
+					<a class="a-footer" href="#">FACEBOOK</a>
+				</div>
+				<div class="connect">
+					<i class="fab fa-linkedin"></i>
+					<a class="a-footer" href="#">LINKED IN</a>
+				</div>
+				<div class="connect">
+					<i class="fab fa-twitter-square"></i>
+					<a class="a-footer" href="#">TWITTER</a>
+				</div>
+				<div class="connect">
+					<i class="fab fa-instagram"></i>
+					<a class="a-footer" href="#">INSTAGRAM</a>
+				</div>
+			</div>
+			<div class="padd__needed">
+			</div>
+		</div>
+	</footer>
+	<!--END OF FOOTER-->
+
+	<!-- LINK TO SCRIPT-->
+	<script type="text/javascript" src="../../public/js/user-login.js"></script>
+	<script type="text/javascript" src="../../public/js/index.js"></script>
+	<script src="../../public/js/signUpForm.js"></script>
+</body>
+
+</html>

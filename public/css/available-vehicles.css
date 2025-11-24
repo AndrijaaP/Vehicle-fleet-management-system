@@ -1,0 +1,170 @@
+/* Globalne postavke */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../../public/images/truck1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Blur efekat pozadine + tamni overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);  
+    z-index: -1;
+}
+
+/* Kontejner za tabelu */
+.table-container {
+    width: 75%;              /* optimalno za 4 kolone */
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: visible;
+    margin: 0 auto;
+}
+
+.table-container:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Naslov unutar tabele */
+h2 {
+    text-align: center;
+    background: #007bff;
+    color: white;
+    padding: 18px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Stilizacija tabele */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;   /* fiksna raspodela širine kolona */
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Zaglavlje tabele */
+th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Kolone - optimalne širine */
+th:nth-child(1), td:nth-child(1) { width: 20%; }   /* Marka */
+th:nth-child(2), td:nth-child(2) { width: 25%; }   /* Model */
+th:nth-child(3), td:nth-child(3) { width: 25%; }   /* Godište */
+th:nth-child(4), td:nth-child(4) { width: 25%; }   /* Registracija */
+
+/* Efekat na redove */
+tbody tr {
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+    background: rgba(0, 123, 255, 0.15);
+    transform: scale(1.02);
+}
+
+/* Poslednji red bez bordera */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Stil za praznu tabelu */
+.no-data {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    padding: 20px;
+}
+
+/* Dugme za nazad */
+.btn-nazad {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #4b4b4b, #2e2e2e);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+.btn-nazad::before {
+    content: '← ';
+    font-size: 22px;
+    margin-right: 8px;
+}
+.btn-nazad:hover {
+    background: linear-gradient(135deg, #4b4b4b, #2e2e2e);
+    transform: translateY(-1px) scale(1.05); 
+    box-shadow: 0 11px 24px rgba(0,0,0,0.48);
+}
+
+/* Responsivnost */
+@media (max-width: 800px) {
+    .table-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .table-container {
+        width: 95%;
+    }
+
+    .btn-nazad {
+        padding: 10px 16px;
+        font-size: 15px;
+        top: 40px;
+        left: 20px;
+    }
+
+    /* za male ekrane Registracija se prelama */
+    th:nth-child(4), td:nth-child(4) {
+        white-space: normal;
+    }
+}

@@ -1,0 +1,214 @@
+/* 📌 Opšti stil */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../../public/images/service-garage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Dugme za nazad */
+.btn-nazad {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #2980b9, #22303c);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 5;
+}
+.btn-nazad::before {
+    content: '← ';
+    font-size: 22px;
+    margin-right: 8px;
+}
+.btn-nazad:hover {
+    background: linear-gradient(135deg, #2980b9, #22303c);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 11px 24px rgba(0,0,0,0.48);
+}
+
+/* Naslov */
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    font-size: 22px;
+}
+
+/* Centriranje tabele */
+.container {
+    width: 90%;
+    max-width: 950px;
+    background: white;
+    padding: 0;
+    border-radius: 14px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    color: black;
+    position: relative;
+}
+
+/* 📌 Scroll wrapper */
+.table-wrapper {
+    max-height: 70vh;   /* vertikalni scroll kada ima puno podataka */
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/* Stilizacija tabele */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Naslov tabele */
+.table-title {
+    background: #23272b;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Zaglavlja tabele */
+th {
+    background: #37404a;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: none; 
+}
+
+/* Redovi tabele */
+td {
+    padding: 12px;
+    text-align: center;
+    color: #2d2d2d;
+    font-size: 15px;
+    border: none; 
+}
+
+/* Alternativna boja redova */
+tr:nth-child(even) {
+    background: #f5f7fa;
+}
+
+/* Hover efekat za redove */
+tr:hover {
+    background: #e2e6ea;
+}
+
+/* Dugmad */
+button {
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Dugme za završetak servisa */
+button.zavrsi {
+    background: #dc3545;
+}
+
+/* Forma za zakazivanje */
+#formaServis {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    color: black;
+}
+
+/* Naslov forme */
+h3 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Input polja */
+label {
+    font-weight: bold;
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.3s ease-in-out;
+    background: #f8f9fa;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #007bff;
+    outline: none;
+    background: white;
+}
+
+/* Dugmad unutar forme */
+button[type="submit"] {
+    background: #007bff;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+button[type="button"] {
+    background: #dc3545;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+}

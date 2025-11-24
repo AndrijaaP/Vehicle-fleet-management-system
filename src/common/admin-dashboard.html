@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Vozni Park - Admin Panel</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- BOOTSTRAP & FONTS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+
+    <style>
+        /* Pozadinska slika i overlay */
+        body {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../public/images/fleet.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+
+        .card {
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card i {
+            margin-bottom: 10px;
+        }
+
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+
+        h1 {
+            color: #fff;
+        }
+
+        /* sve linkove u navbaru bela boja */
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        /* hover za sve osim onih koji su već crveni */
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #00BFFF !important;
+        }
+
+        /* ako je stavka označena kao text-danger neka uvek ostane crvena */
+        .navbar-dark .navbar-nav .nav-link.text-danger,
+        .navbar-dark .navbar-nav .nav-link.text-danger:hover {
+            color: #FF3B3B !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGACIJA -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Vozni Park</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#" onclick="potvrdiLogout();">Početna</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../src/admin/index-admin-login.html">Admin Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../src/user/index-user.html">Korisnik Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../src/common/signUpForm.html">Registracija</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../src/common/contact-us.html">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../src/admin/admin-inbox.php">Inbox</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="#" onclick="potvrdiLogout();">Odjava</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ADMIN DASHBOARD -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Admin Panel</h1>
+
+        <div class="row text-center">
+            <!-- Upravljanje vozilima -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 bg-white rounded">
+                    <i class="fas fa-car text-primary fa-3x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Upravljanje vozilima</h5>
+                        <p class="card-text">Dodajte ili uklonite vozila iz sistema.</p>
+                        <a href="../../src/admin/admin-add-vehicle.php" class="btn btn-success">Dodaj vozilo</a>
+                        <a href="../../src/admin/admin-delete-vehicles.php" class="btn btn-danger">Obriši vozilo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upravljanje vozačima -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 bg-white rounded">
+                    <i class="fas fa-user text-success fa-3x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Upravljanje vozačima</h5>
+                        <p class="card-text">Dodajte ili uklonite vozače iz sistema.</p>
+                        <a href="../../src/admin/admin-add-driver.php" class="btn btn-success">Dodaj vozača</a>
+                        <a href="../../src/admin/admin-drivers.php" class="btn btn-danger">Obriši vozača</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pregled podataka -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 bg-white rounded">
+                    <i class="fas fa-list-alt text-info fa-3x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Pregled podataka</h5>
+                        <p class="card-text">Pregled svih vozila, vozača i servisa.</p>
+                        <a href="../../src/admin/admin-overview.php" class="btn btn-info">Pregledaj</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center mt-4">
+            <!-- Izmena i ažuriranje podataka -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 bg-white rounded">
+                    <i class="fas fa-edit text-warning fa-3x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Izmena i ažuriranje podataka</h5>
+                        <p class="card-text">Izmenite podatke o vozilima, vozačima i servisima.</p>
+                        <a href="../../src/admin/admin-edit.php" class="btn btn-warning">Izmeni podatke</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pregled prijava kvarova -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 bg-white rounded">
+                    <i class="fas fa-exclamation-triangle text-danger fa-3x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Prijavljeni kvarovi</h5>
+                        <p class="card-text">Pregledajte sve prijavljene kvarove u sistemu.</p>
+                        <a href="../../src/admin/admin-faults.php" class="btn btn-danger">Pregledaj</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zakazivanje servisa -->
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 bg-white rounded">
+                    <i class="fas fa-calendar-check text-primary fa-3x"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Zakazivanje servisa</h5>
+                        <p class="card-text">Planirajte i upravljajte servisnim terminima.</p>
+                        <a href="../../src/admin/admin-services.php" class="btn btn-primary">Zakazi servis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Vozni Park | Sva prava zadržana</p>
+        <div>
+            <a href="#" class="text-white mx-2"><i class="fab fa-facebook-square"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-twitter-square"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../../public/js/index.js"></script>
+    <script src="../../public/js/admin-table-logout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
