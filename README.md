@@ -62,5 +62,3 @@ Password: `54321`
 - GPS tracking and fuel monitoring  
 - PDF report generation  
 
-## License
-This project is part of an academic assignment and is provided **as-is** for educational purposes.
