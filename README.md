@@ -15,30 +15,56 @@ A web-based application for managing company vehicle fleets, built with PHP and 
 - View reservation history
 
 ## Tech Stack
-- **Backend:** PHP 7.4+  
-- **Database:** MySQL/MariaDB (schema + seed scripts included)  
-- **Frontend:** HTML5, CSS3, JavaScript (jQuery), Bootstrap  
-- **Server:** Apache/XAMPP  
+- **Backend:** PHP 7.4+
+- **Database:** MySQL/MariaDB (schema + seed scripts included)
+- **Frontend:** HTML5, CSS3, JavaScript (jQuery), Bootstrap
+- **Server:** Apache/XAMPP
+
+## Database Overview
+Key tables:
+- `korisnici` – Users (Admin/User roles)
+- `vozila` – Vehicles
+- `vozaci` – Drivers
+- `rezervacije` – Reservations
+- `kvarovi` – Fault reports
+- `servisi` – Service appointments
+- `zahtevi` – User requests
 
 ## Installation
+
 1. Install XAMPP and start Apache & MySQL.  
-2. Import database:
-```bash
+2. Import database using the following SQL commands:
 mysql -u root -p
 CREATE DATABASE vozniparkdb;
 mysql -u root -p vozniparkdb < database/vozniparkdb.sql
-Configure config/config.php.
 
-Open in browser: http://localhost/[project-folder]/index.html
+3. Configure database connection in `config/config.php`.  
+4. Open in browser: `http://localhost/[project-folder]/index.html`  
 
-Default Credentials
-Admin: marko.petrovic@email.com / 12345
-User: jovana.nikolic@email.com / 54321
+## Default Credentials
 
-Security
-Password hashing, role-based access, prepared statements
+**Admin**  
+Email: `marko.petrovic@email.com`  
+Password: `12345`  
 
-Session management and form validations
+**User**  
+Email: `jovana.nikolic@email.com`  
+Password: `54321`  
 
-License
-Academic project, provided as-is for educational purposes.
+## Security & Validation
+- Password hashing (`password_hash()`)  
+- Role-based access control (Admin/User)  
+- Prepared statements to prevent SQL injection  
+- Session-based authentication  
+- Client & server-side form validations  
+
+## Future Enhancements
+- Email notifications for reservations/services  
+- Multi-language support  
+- Mobile app integration  
+- Advanced analytics dashboard  
+- GPS tracking and fuel monitoring  
+- PDF report generation  
+
+## License
+This project is part of an academic assignment and is provided **as-is** for educational purposes.
