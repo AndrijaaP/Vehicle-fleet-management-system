@@ -32,10 +32,8 @@ Key tables:
 
 ## Installation
 
-## Installation
-
 1. Install XAMPP (or any Apache + MySQL + PHP setup) and start Apache & MySQL.  
-2. Import the database using the provided SQL files in the `database/` folder.  
+2. Import the database using the provided SQL file in the `database/` folder.  
 3. Configure database connection in `config/config.php`.  
 4. Open in browser: `http://localhost/[project-folder]/index.html`
 
