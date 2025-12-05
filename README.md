@@ -32,14 +32,12 @@ Key tables:
 
 ## Installation
 
-1. Install XAMPP and start Apache & MySQL.  
-2. Import database using the following SQL commands:
-mysql -u root -p
-CREATE DATABASE vozniparkdb;
-mysql -u root -p vozniparkdb < database/vozniparkdb.sql
+## Installation
 
+1. Install XAMPP (or any Apache + MySQL + PHP setup) and start Apache & MySQL.  
+2. Import the database using the provided SQL files in the `database/` folder.  
 3. Configure database connection in `config/config.php`.  
-4. Open in browser: `http://localhost/[project-folder]/index.html`  
+4. Open in browser: `http://localhost/[project-folder]/index.html`
 
 ## Default Credentials
 
