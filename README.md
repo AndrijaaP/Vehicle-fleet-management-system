@@ -17,7 +17,7 @@ A web-based application for managing company vehicle fleets, built with PHP and 
 ## Tech Stack
 - **Backend:** PHP 7.4+
 - **Database:** MySQL/MariaDB (schema + seed scripts included)
-- **Frontend:** HTML5, CSS3, JavaScript (jQuery), Bootstrap
+- **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
 - **Server:** Apache/XAMPP
 
 ## Database Overview
