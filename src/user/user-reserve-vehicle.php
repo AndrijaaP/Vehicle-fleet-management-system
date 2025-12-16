@@ -33,7 +33,7 @@ session_start();
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM vozila WHERE Status = 'Dostupno'";
+                $sql = "SELECT * FROM vozila WHERE Status = 'Dostupno' ORDER BY ID DESC";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0):

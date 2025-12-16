@@ -2,7 +2,7 @@
 require __DIR__ . '/../../config/config.php'; // Konekcija sa bazom
 
 // Dohvati sva vozila iz baze
-$sql = "SELECT ID, Marka, Model, Godiste, Registracija, Status FROM Vozila";
+$sql = "SELECT ID, Marka, Model, Godiste, Registracija, Status FROM Vozila ORDER BY ID DESC";
 $result = $conn->query($sql);
 ?>
 

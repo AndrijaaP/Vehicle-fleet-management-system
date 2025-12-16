@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/../../config/config.php';
-$sql = "SELECT * FROM kvarovi";
+$sql = "SELECT * FROM kvarovi ORDER BY DatumPrijave DESC";
 $result = $conn->query($sql);
 ?>
 

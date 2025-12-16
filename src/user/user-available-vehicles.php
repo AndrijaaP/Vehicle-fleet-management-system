@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../../config/config.php';
 
-$sql = "SELECT Marka, Model, Godiste, Registracija FROM vozila WHERE Status = 'Dostupno'";
+$sql = "SELECT Marka, Model, Godiste, Registracija FROM vozila WHERE Status = 'Dostupno' ORDER BY ID DESC";
 $result = $conn->query($sql);
 ?>
 
