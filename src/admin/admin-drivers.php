@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../../config/config.php'; // Konekcija sa bazom
 
-$query = "SELECT * FROM vozaci";
+$query = "SELECT * FROM vozaci ORDER BY ID DESC";
 $result = $conn->query($query);
 ?>
 

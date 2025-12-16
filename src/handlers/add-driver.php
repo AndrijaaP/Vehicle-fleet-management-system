@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../../config/config.php';// Konekcija sa bazom
+require __DIR__ . '/../../config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = intval($_POST['id']);
@@ -19,13 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // SQL upit za unos
-    $sql = "INSERT INTO Vozaci (ID, Ime, Prezime, BrojDozvole, Status) VALUES ('$id', '$ime', '$prezime', '$broj_dozvole', '$status')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Vozač uspešno dodat!'); window.location='../admin/admin-add-driver.php';</script>";
+    // Provera da li ID već postoji
+    $check = $conn->query("SELECT ID FROM Vozaci WHERE ID = $id");
+    if ($check->num_rows > 0) {
+        echo "<script>alert('Vozač sa ovim ID-jem već postoji!'); window.location='../admin/admin-add-driver.php';</script>";
     } else {
-        echo "<script>alert('Greška: " . $conn->error . "'); window.location='../admin/admin-add-driver.php';</script>";
+        $sql = "INSERT INTO Vozaci (ID, Ime, Prezime, BrojDozvole, Status) VALUES ('$id', '$ime', '$prezime', '$broj_dozvole', '$status')";
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>alert('Vozač uspešno dodat!'); window.location='../admin/admin-add-driver.php';</script>";
+        } else {
+            echo "<script>alert('Greška pri unosu!'); window.location='../admin/admin-add-driver.php';</script>";
+        }
     }
 }
 $conn->close();

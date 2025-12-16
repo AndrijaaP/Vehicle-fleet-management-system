@@ -2,19 +2,19 @@
 require __DIR__ . '/../../config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
-    $status = $_POST['status'];
+    $id = (int)$_POST['id'];
+    $status = trim($_POST['status']);
 
-    $sql = "UPDATE kvarovi SET Status='$status' WHERE ID='$id'";
+    $stmt = $conn->prepare("UPDATE kvarovi SET Status=? WHERE ID=?");
+    $stmt->bind_param("si", $status, $id);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Status uspešno ažuriran!";
+    if($stmt->execute()){
+        $stmt->close();
+        $conn->close();
+        header("Location: ../admin/admin-faults.php");
+        exit();
     } else {
-        echo "Greška: " . $conn->error;
+        echo "Greška: " . $stmt->error;
     }
-
-    $conn->close();
-    header("Location: ../admin/admin-faults.php");
-    exit();
 }
 ?>

@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Greška pri povezivanju: " . $conn->connect_error);
 }
 
-// Podesi da se koriste UTF-8 karakteri
+// UTF-8 karekteri
 $conn->set_charset("utf8");
 
 ?>
